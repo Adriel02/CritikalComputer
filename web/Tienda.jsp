@@ -4,9 +4,9 @@
     Author     : Adriel
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>    
+<%@page import="Model.usuario"%>    
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Critikal Computer</title>
@@ -18,13 +18,13 @@
     </head>
     <body>
         <%if (session.getAttribute("Usuario") != null) {%>
+        <h3><font color="white">Usuario: <%= ((usuario)session.getAttribute("Usuario")).getNombre() %></font></h3>
         <form action="/frontServlet" method="post">
             <div class="salir">
                 <input type="hidden" name="command" value="cuenta.salir">
                 <button type="submit" class="myButton" id="derecha">Cerrar Sesion</button>
             </div>
         </form>
-        <%=request.getParameter("Usuario")%>
         <a href="/Carrito.jsp" href="#" class="myButton" id="izquierda">Ver Carrito</a>
         <%}%>
         <div >

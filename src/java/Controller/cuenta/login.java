@@ -24,7 +24,7 @@ public class login extends Controller.controller{
         HttpSession session= request.getSession(true);
         usuario user= new usuario();
         Carrito carrito = new Carrito();
-        user.setNombre(request.getParameter("usuario"));
+        user.setNombre(request.getParameter("nombre"));
         user.setContraseña(request.getParameter("pass"));
         session.setAttribute("Usuario", user);
         session.setAttribute("Carrito", carrito);
